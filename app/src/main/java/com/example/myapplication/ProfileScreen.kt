@@ -101,38 +101,7 @@ fun ProfileScreen(onThemeToggle: () -> Unit, isDarkTheme: Boolean) {
                     .fillMaxWidth()
                     .padding(horizontal = 24.dp),
             ) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                ) {
-                    InfoRow(
-                        icon  = Icons.Default.Person,
-                        label = "Full Name",
-                        value = "Vince Joshua S.Tan ",
-                    )
-                    InfoRow(
-                        icon  = Icons.Default.School,
-                        label = "Course",
-                        value = "BSIT",
-                    )
-                    InfoRow(
-                        icon  = Icons.Default.Groups,
-                        label = "Section",
-                        value = "BSIT3-2",
-                    )
-                    InfoRow(
-                        icon  = Icons.Default.Phone,
-                        label = "Mobile Number",
-                        value = "09213085706",
-                    )
-                    InfoRow(
-                        icon  = Icons.Default.Email,
-                        label = "Email Address",
-                        value = "vjtan45319@liceo.edu.ph",
-                    )
-                }
-            }
 
-        }
     }
 }
 
