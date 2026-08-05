@@ -72,7 +72,7 @@ fun BusinessCard() {
 
         // ---- Step 4: name and title ----
         Spacer(modifier = Modifier.height(16.dp))
-        Text(text = "Juan Dela Cruz", fontSize = 22.sp, fontWeight = FontWeight.Bold)
+        Text(text = "Vince Joshua Tan", fontSize = 22.sp, fontWeight = FontWeight.Bold)
         Text(text = "Android Developer", fontSize = 16.sp, color = Color.Gray)
 
         Spacer(modifier = Modifier.height(24.dp))
