@@ -1,0 +1,7 @@
+- [x] Update `libs.versions.toml` with navigation and serialization dependencies
+- [x] Update `app/build.gradle.kts` to apply plugins and dependencies
+- [x] Create `Routes.kt` for type-safe navigation
+- [x] Create `Screens.kt` with `HomeScreen` and `GreetingScreen`
+- [x] Update `MainActivity.kt` to implement `NavHost`
+- [x] Build and verify the project
+- [x] Prepare screenshot and Git commands summary
