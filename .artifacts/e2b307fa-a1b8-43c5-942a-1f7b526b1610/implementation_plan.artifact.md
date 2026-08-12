@@ -1,41 +1,47 @@
-# Implementation Plan - Jetpack Compose Navigation with Type-Safe Routes
+# Implementation Plan - Laboratory Activity 8 (MVVM Profile App)
 
-Implement a two-screen navigation flow using Jetpack Compose Navigation and Kotlin Serialization for type-safe routing.
+Build an Android app that allows users to create and update a profile using the MVVM pattern with Jetpack Compose.
 
 ## Proposed Changes
 
 ### Build Configuration
 
 #### [MODIFY] [libs.versions.toml](file:///D:/edp-android-tan/gradle/libs.versions.toml)
-- Add versions for `navigation-compose` (2.8.5) and `kotlinx-serialization-json` (1.7.3).
-- Add `kotlin-serialization` plugin definition.
-- Add library definitions for navigation and serialization.
+- Add entries for `androidx-lifecycle-viewmodel-compose` and `androidx-lifecycle-runtime-compose` using the existing `lifecycleRuntimeKtx` version (2.11.0).
 
 #### [MODIFY] [build.gradle.kts (app)](file:///D:/edp-android-tan/app/build.gradle.kts)
-- Apply the Kotlin Serialization plugin.
-- Add navigation and serialization dependencies.
+- Add the new lifecycle dependencies to the `dependencies` block.
 
 ### Source Code
 
-#### [NEW] [Routes.kt](file:///D:/edp-android-tan/app/src/main/java/com/example/myapplication/Routes.kt)
-- Define `@Serializable` routes: `Home` (object) and `Greeting` (data class).
+#### [NEW] [ProfileUiState.kt](file:///D:/edp-android-tan/app/src/main/java/com/example/myapplication/ProfileUiState.kt)
+- Create an immutable data class to hold the profile state (name, email, contact, address, username, skills list, etc.).
 
-#### [NEW] [Screens.kt](file:///D:/edp-android-tan/app/src/main/java/com/example/myapplication/Screens.kt)
-- Implement `HomeScreen` with a text field and button.
-- Implement `GreetingScreen` to display the passed name.
+#### [NEW] [ProfileViewModel.kt](file:///D:/edp-android-tan/app/src/main/java/com/example/myapplication/ProfileViewModel.kt)
+- Create a `ViewModel` that manages the `ProfileUiState` using `MutableStateFlow`.
+- Implement functions to handle field changes, adding/removing skills, and toggling the preview mode.
+
+#### [NEW] [ProfileScreen.kt](file:///D:/edp-android-tan/app/src/main/java/com/example/myapplication/ProfileScreen.kt)
+- Implement `ProfileForm` for editing.
+- Implement `ProfilePreview` for read-only viewing.
+- Implement the main `ProfileScreen` composable to switch between the form and preview based on the UI state.
 
 #### [MODIFY] [MainActivity.kt](file:///D:/edp-android-tan/app/src/main/java/com/example/myapplication/MainActivity.kt)
-- Set up `NavController` and `NavHost` in `setContent`.
-- Define navigation graph with `Home` and `Greeting` destinations.
+- Update `setContent` to display the `ProfileScreen`.
 
 ## Verification Plan
 
 ### Automated Tests
-- Run `gradlew :app:assembleDebug` to verify compilation.
-- (Optional) Run the app on an emulator to verify navigation logic.
+- Run `gradlew assembleDebug` to ensure the project builds correctly.
 
 ### Manual Verification
-- Deploy to an emulator/device.
-- Enter a name on the Home screen.
-- Click "Show Greeting" and verify the second screen displays the name.
-- Take a screenshot of the Greeting screen and save it to `screenshots/greeting_screenshot.png`.
+1. Launch the app on an emulator.
+2. Fill in all profile fields.
+3. Add at least two skills and remove one.
+4. Tap the **Preview** button and verify the data is displayed correctly.
+5. Tap **Back to edit** to return to the form.
+6. Rotate the device and verify that the entered data persists (survives configuration change).
+
+### Deliverables
+- A screenshot of the **Preview** screen saved as `screenshots/screenshot.png`.
+- All changes committed to the `lab-activity-8` branch.
