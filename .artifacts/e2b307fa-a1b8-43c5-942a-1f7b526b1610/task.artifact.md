@@ -1,7 +1,0 @@
-- [ ] Update dependencies in `libs.versions.toml` and `app/build.gradle.kts`
-- [ ] Create `ProfileUiState.kt`
-- [ ] Create `ProfileViewModel.kt`
-- [ ] Create `ProfileScreen.kt`
-- [ ] Update `MainActivity.kt`
-- [ ] Build and verify the app
-- [ ] Capture screenshot and final submission
