@@ -1,0 +1,7 @@
+- [x] Update dependencies in `libs.versions.toml` and `app/build.gradle.kts`
+- [x] Create `ProfileUiState.kt`
+- [x] Create `ProfileViewModel.kt`
+- [x] Create `ProfileScreen.kt`
+- [x] Update `MainActivity.kt`
+- [x] Build and verify the app
+- [x] Capture screenshot and final submission
