@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.theme
+package edu.liceo.fieldkit.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -33,7 +33,7 @@ private val LightColorScheme =
     )
 
 @Composable
-fun MyApplicationTheme(
+fun LiceoFieldKitTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = false,

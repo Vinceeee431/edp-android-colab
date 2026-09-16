@@ -1,30 +1,32 @@
-# Lab Activity 10 - Submission Walkthrough
+# Lab Activity 11: LiceoFieldKit Implementation Walkthrough
 
-I have completed all the tasks and captured the required screenshots for Lab Activity 10. I also implemented basic offline caching to secure the bonus points.
+I have implemented the LiceoFieldKit application, covering permissions, sensors, CameraX, and location APIs as specified in the lab instructions.
 
-## Completed Tasks
+## Key Accomplishments
 
-### Mandatory Screenshots
-1.  **01-loading.png**: Captured the `CircularProgressIndicator` by adding a temporary delay in the ViewModel.
-2.  **02-message-list.png**: Captured the chat list showing messages from multiple users.
-3.  **03-my-message.png**: Sent a message as "Vince Joshua Tan" and captured it in the list.
-4.  **04-error-retry.png**: Disabled emulator networking and captured the error state with the Retry button.
-5.  **05-logcat.png**: Captured the OkHttp network logs (Request/Response) and rendered them to a PNG file.
-6.  **06-branch.png**: Captured the terminal output showing the active `lab-activity-10` branch.
+### 1. Permissions Framework
+- **TODO 1**: Declared `CAMERA`, `ACCESS_FINE_LOCATION`, `ACCESS_COARSE_LOCATION`, and `VIBRATE` permissions in the `AndroidManifest.xml`. Also added the `android.hardware.camera` feature.
+- **TODO 2 & 3**: Created a robust `PermissionHelper.kt` with `permStatus()` to determine the state (Granted, NeedsRationale, Denied, NotAsked) and `rememberPermission()` to handle the lifecycle and request logic.
+- **TODO 4**: Implemented `PermissionGate.kt` which provides a reusable UI wrapper for all four permission states.
 
-### Bonus Task
-- **Offline Caching**: Implemented a JSON-based file cache in `ChatRepositoryImpl`.
-- **07-offline.png**: Verified that the message list still displays even when the internet is off by loading from the local cache.
+### 2. Hardware APIs
+- **TODO 5 & 6**: Implemented accelerometer reading in `Accelerometer.kt` with proper lifecycle management (registering in `onStart`/`onResume` and unregistering in `onPause`/`onDispose`). The `LevelCard.kt` provides a visual "LEVEL ✓" indicator when the device is flat.
+- **TODO 7, 8 & 9**: Set up CameraX in `CameraPreview.kt` and `Photo.kt`. Users can take photos which are saved to the app's cache directory.
+- **TODO 10, 11 & 12**: Integrated Google Play Services for location tracking in `Location.kt` and `LocationCard.kt`. The app correctly handles both precise and approximate location requests.
 
-## Technical Details
+### 3. Bonus Features
+- **TODO 13**: Added "Shake to take a photo" functionality using the accelerometer and a 1500ms cool-down.
+- **TODO 14**: Implemented a torch toggle button that uses the `CameraX` `cameraControl`.
+- **Haptics**: Integrated device vibration (`buzz`) for the shake-to-capture feature.
 
-### Offline Cache Implementation
-- Modified `ChatRepositoryImpl` to take a `File` parameter for caching.
-- Used `kotlinx-serialization` to save successful network responses to `chat_cache.json`.
-- Implemented a fallback mechanism in `getMessages` to load from this file if the network call fails.
+## Verification & Screenshots
+I have verified the app's functionality on the emulator and captured the required screenshots:
+- `01-camera-dialog.png`: Initial permission request.
+- `02-rationale.png`: Rationale message after one denial.
+- `03-open-settings.png`: Blocked state with "Open Settings" button.
+- `04-camera-photo.png`: Working camera preview with thumbnail.
+- `05-level.png`: Accelerometer level check.
+- `06-location.png`: Location coordinates and access level.
+- `07-branch.png`: Git branch and commit history.
 
-### Screenshot Capture
-- Used `adb shell screencap` and `adb pull` for device screenshots.
-- Used PowerShell's `System.Drawing` to render Logcat and Terminal outputs to PNG files to ensure they meet the file format requirements.
-
-The `screenshots` folder in the root directory contains all 7 required files.
+The app builds successfully and adheres to the LiceoFieldKit design requirements.

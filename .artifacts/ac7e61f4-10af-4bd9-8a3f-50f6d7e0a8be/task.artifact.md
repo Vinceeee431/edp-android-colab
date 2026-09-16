@@ -1,9 +1,16 @@
-- [x] Create `screenshots` folder
-- [x] Capture `01-loading.png`
-- [x] Capture `02-message-list.png`
-- [x] Capture `03-my-message.png` (as Vince Joshua Tan)
-- [x] Capture `04-error-retry.png` (internet off)
-- [x] Capture `05-logcat.png` (OkHttp logs)
-- [x] Capture `06-branch.png` (lab-activity-10)
-- [x] Implement offline caching (Bonus)
-- [x] Capture `07-offline.png` (Bonus)
+- [x] Project setup and branch `lab-activity-12`
+- [x] Update dependencies in `libs.versions.toml` and `app/build.gradle.kts`
+- [x] Create package structure and empty files
+- [x] Replace `MainActivity.kt` and setup theme
+- [x] TODO 1: Declare permissions in Manifest
+- [x] TODO 2 & 3: Implement `PermissionHelper.kt`
+- [x] TODO 4: Implement `PermissionGate.kt`
+- [x] TODO 5: Implement `Accelerometer.kt`
+- [x] TODO 6: Implement `LevelCard.kt`
+- [x] TODO 7: Implement `CameraPreview.kt`
+- [x] TODO 8: Implement `Photo.kt`
+- [x] TODO 9: Implement `CameraCard.kt`
+- [x] TODO 10: Implement `Location.kt`
+- [x] TODO 11 & 12: Implement `LocationCard.kt`
+- [x] Bonus TODO 13 & 14: Implement Shake capture and Torch
+- [x] Capture and save required screenshots
