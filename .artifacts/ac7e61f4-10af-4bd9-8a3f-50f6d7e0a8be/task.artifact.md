@@ -1,0 +1,9 @@
+- [x] Create `screenshots` folder
+- [x] Capture `01-loading.png`
+- [x] Capture `02-message-list.png`
+- [x] Capture `03-my-message.png` (as Vince Joshua Tan)
+- [x] Capture `04-error-retry.png` (internet off)
+- [x] Capture `05-logcat.png` (OkHttp logs)
+- [x] Capture `06-branch.png` (lab-activity-10)
+- [x] Implement offline caching (Bonus)
+- [x] Capture `07-offline.png` (Bonus)
