@@ -13,4 +13,4 @@
 - [x] TODO 10: Implement `Location.kt`
 - [x] TODO 11 & 12: Implement `LocationCard.kt`
 - [x] Bonus TODO 13 & 14: Implement Shake capture and Torch
-- [x] Capture and save required screenshots
+- [x] Capture and save required screenshots (01-08)
